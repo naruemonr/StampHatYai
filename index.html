@@ -1,0 +1,72 @@
+<!-- <?php
+    session_start();
+
+    if (!isset($_SESSION['id']) ||(trim ($_SESSION['id']) == '')) {
+        header('location:user_login_page.php');
+        exit();
+    }
+?> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>HOME PAGE</title>
+  <meta name="viewport" content="width=fgdfg, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <script type="text/javascript" src="js/index.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <meta charset="utf-8" />
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFd4RCo22KnGhh3e2Y1gqwrI-MQ_OjzFA" async defer>
+  </script> -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpWIcB22vK6omxcx--pPkiNWLH6jhNoiA"
+    type="text/javascript"></script>
+
+</head>
+
+<body>
+
+  <div class="topbar">
+    <p>-HATYAI STAMP-</p>
+  </div>
+
+  <a class="weatherwidget-io" href="https://forecast7.com/en/7d01100d47/hat-yai/" data-label_1="HAT YAI"
+    data-label_2="WEATHER" data-font="Arimo" data-icons="Climacons Animated" data-mode="Current" data-days="3"
+    data-theme="blue-mountains">HAT YAI WEATHER</a>
+
+  <section>
+    <div id="map"></div>
+  </section>
+
+
+  <div class="footer">
+    <a href="user_login_page.html">
+      <button class="tablinks1"><input type="image" src="images/key.png" width="25" height="25"align="left">LOGIN</button>
+    </a>
+
+    <a href="user_signup_page.html">
+      <button class="tablinks3"><input type="image" src="images/sign.png" width="25" height="25" align="left"> SIGNUP </button>
+    </a>
+    <a href="about.html">
+      <button class="tablinks2"><input type="image" src="images/group.png" width="25" height="25" align="left">  ABOUT</button>
+    </a>
+
+  </div>
+
+  <script>
+    ! function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = 'https://weatherwidget.io/js/widget.min.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }
+    }(document, 'script', 'weatherwidget-io-js');
+  </script>
+</body>
+
+
+
+</html>

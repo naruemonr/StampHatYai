@@ -1,0 +1,113 @@
+<?php
+    session_start();
+    include('../config/dbconn.php');
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Register page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <!-- Include CSS File Here -->
+  <link rel="stylesheet" href="css/regis.css" />
+  <!-- Include JS File Here -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFd4RCo22KnGhh3e2Y1gqwrI-MQ_OjzFA" async defer>
+  </script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+  <div class="user">
+    <header class="user__header">
+
+      <img src="images/logo1.png" alt="logo" width="100" height="100">
+      <h1 class="user__title"></h1>HATYAI STAMP</h1>
+    </header>
+
+    <!-- <form class="form" action="saveregis.php" method="POST"> -->
+    <div class="form">
+      <div class="form__group">
+        <input type="text" placeholder="Name" class="form__input" id="name" name="name" required />
+      </div>
+
+      <div class="form__group">
+        <input type="text" placeholder="Username" class="form__input" id="username" name="username" required />
+      </div>
+
+      <div class="form__group">
+        <input type="password" placeholder="Password" class="form__input" id="password" name="password" required />
+      </div>
+
+      <div class="form__group">
+        <input type="email" placeholder="Email" class="form__input" id="email" name="email" required />
+      </div>
+
+
+      <button type="submit" class="btn" id="signup" name="submit">Create account</button>
+    </div>
+  </div>
+</body>
+
+<script>
+  $(document).ready(function () {
+
+    $('#signup').on('click', function () {
+      var name = $('#name').val();
+      var username = $('#username').val();
+      var password = $('#password').val();
+      var email = $('#email').val();
+      if (name != "" && username != "" && password != "" && email != "") {
+        $.ajax({
+
+            url: 'https://seniorproject.ict.sci.psu.ac.th/students/ict/std-59/303155/SATMPHATYAI/user_signup.php',
+            // url: "http://localhost/project/user_signup.php",
+            type: "POST",
+            dataType: 'JSON',
+            data: {
+              name: name,
+              username: username,
+              password: password,
+              email: email
+            },
+            cache: false,
+            // success: function (response) {
+            //   var msg = "";
+            //   if (response == 1) {
+            //     window.location = "user_login_page.html";
+            //   } else {
+            //     msg = "Try again!";
+            //   }
+            //   $("#msg").html(msg);
+            // }
+          })
+          // see error php side when call with ajax
+
+          .fail(function (xhr, st, err) {
+            console.log(xhr.responseText)
+          })
+          .done(function (response) {
+
+            var msg = "";
+            if (response.code == 1) {
+              // when code == 1 is redirect page
+              window.location.href = "user_login_page.html";
+            } else {
+              if (response.code == 2) {
+                $('#name').focus()
+                // alert and break
+                alert(response.msg)
+                // alert msg from php return
+                return false
+              }
+            }
+            // $("#msg").html(msg);
+          });
+      }
+    });
+  });
+</script>
+
+</html>
