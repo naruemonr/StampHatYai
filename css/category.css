@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Mansalva&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #fce5e5;
+}
+
+
+p {
+  color: #bf2d43;
+  text-shadow: 4px 4px 6px #e17792;
+  overflow: hidden;
+  text-align: center;
+  font-size: 25px;
+  font-family: "Inconsolata";
+  font-weight: 900;
+  font-style: oblique;
+}
+
+/* 1 Add a black background color to the top navigation */
+.topbar {
+  background-color: #FFB937;
+  overflow: hidden;
+}
+
+
+/* Right-aligned section inside the top navigation */
+.topbar-right {
+  float: right;
+}
+
+form.example input[type=text] {
+  padding: 4px;
+  font-size: 17px;
+  border: 1px solid #FFB937;
+  float: left;
+  width: 80%;
+  background: #ffffff;
+}
+
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 2px;
+  background: rgb(255, 223, 118);
+  font-size: 17px;
+  border: 1px solid #FFB937;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #FFB937;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#map {
+  position: relative;
+  /* This is the aspect ratio */
+  padding-bottom: 100%;
+  height: 50%;
+  overflow: hidden;
+}
+
+/*3 Catagory tab*/
+.footer {
+
+  border: 15px solid #FFB937;
+  background-color: rgb(255, 255, 255);
+}
+
+.tablinks {
+  width: 100%;
+  height: 65px;
+  background-color: inherit;
+  float: center;
+  outline: none;
+  cursor: pointer;
+  padding: 2px 20px 2px 20px;
+  transition: 0.5s;
+  font-size: 20px;
+  font: weight 500;
+  ;
+  color: #2e2e2e;
+  align-items: left;
+  font-family: "Mansalva";
+
+}
+
+.tablinks img {
+  width: 30px;
+  height: 30px;
+}
+
+.scroll {
+  background: cornsilk;
+  height: 200px;
+  overflow: scroll;
+}
